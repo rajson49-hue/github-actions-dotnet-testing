@@ -30,9 +30,12 @@ jobs:
       - name: Build with dotnet
         run: dotnet build --configuration Release
 
-      
       - name: Running test 
         run: dotnet test --configuration Release --no-build
+      
+      - name: publish project 
+        run: dotnet publish src/GitHubActionsDotNet.Api/GitHubActionsDotNet.Api.csproj --configuration Release -o artifacts
+      
 
 
     
