@@ -30,4 +30,9 @@ jobs:
       - name: Build with dotnet
         run: dotnet build --configuration Release
 
+      
+      - name: Running test 
+        run: dotnet build --configuration Release --no--build
+        
+
     
