@@ -1,0 +1,14 @@
+name: Run Every 5 Minutes
+# it can be drop from schedule if they experiencing high load. 
+on:
+   schedule:
+    - cron: '*/59 * * * *'
+
+jobs:
+    cron:
+        name: Run every 5 minutes
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Hello World
+              run: echo "Hello World"
