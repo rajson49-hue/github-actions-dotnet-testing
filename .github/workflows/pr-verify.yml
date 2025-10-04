@@ -47,12 +47,11 @@ jobs:
     needs: build   # wait for other job to finish g
 
     steps:
-
       - name: Azure login
         uses: azure/login@v2
         with:
             client-id: ${{ secrets.AZURE_CLIENT_ID }}
-            tenate-id: ${{ secrets.AZURE_TENATE_ID }}
+            tenant-id: ${{ secrets.AZURE_TENATE_ID }}
             subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
             
