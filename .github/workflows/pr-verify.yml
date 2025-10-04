@@ -46,11 +46,18 @@ jobs:
     needs: build   # wait for other job to finish g
 
     steps:
-
       - uses: actions/download-artifact@v4
         with:
           name: my-artifact
           path: artifacts/
+
+      - name: Azure login
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenate-id: ${{ secrets.AZURE_TENATE_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          
 
        # Deploy to Azure Web apps
       - name: 'Deploy to Azure App Service'
