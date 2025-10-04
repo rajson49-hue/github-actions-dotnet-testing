@@ -2,7 +2,7 @@ name: PR Verify
 
 # These are the veriables which you could use in your workflows
 env:
-  AZURE_WEBAPP_NAME: app-dev-rajsonawala.azurewebsites.net    # set this to the name of your Azure Web App
+  AZURE_WEBAPP_NAME: app-dev-rajsonawala   # set this to the name of your Azure Web App
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
   DOTNET_VERSION: '8.0'                 # set this to the .NET Core version to use
 
@@ -61,11 +61,11 @@ jobs:
           path: artifacts/
 
        # Deploy to Azure Web apps
-      - name: 'Deploy to Azure App Services'
+      - name: 'Deploy to Azure App Service'
         uses: azure/webapps-deploy@v2
         with: 
           app-name: ${{ env.AZURE_WEBAPP_NAME }} # Replace with your app name
-          package: 'artifacts/'
+          package: artifacts/
 
 
     
